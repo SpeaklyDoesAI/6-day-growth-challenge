@@ -1,0 +1,7 @@
+services:
+  - type: web
+    name: 6-day-growth-challenge
+    runtime: static
+    plan: free
+    buildCommand: ""
+    staticPublishPath: .
