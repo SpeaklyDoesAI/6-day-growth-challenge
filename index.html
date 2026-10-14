@@ -160,7 +160,7 @@ button:focus-visible,input:focus-visible{outline:3px solid var(--cyan);outline-o
   </section>
 
   <section aria-labelledby="team-h">
-    <h2 id="team-h"><span class="num">3</span>Team prize: $600 to the winning team</h2>
+    <h2 id="team-h"><span class="num">3</span>Team prize: $1,000 to the winning team</h2>
     <div class="faceoff" id="teams" role="group" aria-label="Your team"></div>
   </section>
 
@@ -180,7 +180,7 @@ button:focus-visible,input:focus-visible{outline:3px solid var(--cyan);outline-o
     <li>Each day runs 12:00 AM to 11:59 PM Eastern Time.</li>
     <li>Only paid signups that join through your link count.</li>
     <li>This bonus is a one-time payment for challenge week, paid after the challenge ends. Your regular 20% commission still applies as usual.</li>
-    <li>"If your team wins" assumes the $600 is split evenly across your team. Your team decides how to divide it.</li>
+    <li>"If your team wins" assumes the $1,000 is split evenly across your team. Your team decides how to divide it.</li>
     <li>This calculator is an estimate. Final payouts are based on official signup records.</li>
   </ul>
 </div>
@@ -188,7 +188,7 @@ button:focus-visible,input:focus-visible{outline:3px solid var(--cyan);outline-o
 <script>
 (function(){
   var LEVELS=[{n:1,goal:6,bonus:25},{n:2,goal:10,bonus:30},{n:3,goal:20,bonus:35},{n:4,goal:55,bonus:40}];
-  var PER=3, TEAM_PRIZE=600;
+  var PER=3, TEAM_PRIZE=1000;
   var TEAMS=[
     {name:"The Key Holders",icon:"🔑",size:6,color:"#ffbf1f"},
     {name:"TikTok Mutant Ninja Streamers",icon:"🥷",size:5,color:"#ff3ea5"}
@@ -271,7 +271,7 @@ button:focus-visible,input:focus-visible{outline:3px solid var(--cyan);outline-o
   TEAMS.forEach(function(T,i){
     if(i===1){var vs=document.createElement("div");vs.className="vs";vs.setAttribute("aria-hidden","true");vs.textContent="VS";tw.appendChild(vs);}
     var b=document.createElement("button");b.type="button";b.className="team t"+i;b.id="team-"+i;
-    b.innerHTML='<span class="ic" aria-hidden="true">'+T.icon+'</span><span class="tn">'+T.name+'</span><span class="split"><b>$600</b></span>';
+    b.innerHTML='<span class="ic" aria-hidden="true">'+T.icon+'</span><span class="tn">'+T.name+'</span><span class="split"><b>'+money(TEAM_PRIZE)+'</b></span>';
     b.addEventListener("click",function(){var changed=state.team!==i;state.team=i;save();render();if(changed)burstAt(b,70);});
     tw.appendChild(b);
   });
